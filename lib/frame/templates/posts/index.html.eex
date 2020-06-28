@@ -3,6 +3,6 @@
   <head>
   </head>
   <body>
-    It's the orders <%= period %>.
+    It's the orders <%= @period %>.
   </body>
 </html>
