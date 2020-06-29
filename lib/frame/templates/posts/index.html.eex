@@ -3,6 +3,18 @@
   <head>
   </head>
   <body>
-    It's the orders <%= @period %>.
+    <h1>It's the orders <%= @period %>.</h1>
+    <%= if length(@orders) > 0 do %>
+      <ul>
+        <%= for order <- @orders do %>
+          <li>
+            <strong><%= order.author %></strong>
+            <%= order.body %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No orders.</p>
+    <% end %>
   </body>
 </html>

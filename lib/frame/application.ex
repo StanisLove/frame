@@ -9,8 +9,8 @@ defmodule Frame.Application do
     children = [
       # Starts a worker by calling: Frame.Worker.start_link(arg)
       # {Frame.Worker, arg}
-
-      {Plug.Adapters.Cowboy, scheme: :http, plug: Frame.Router, options: [port: 4001]}
+      {Plug.Adapters.Cowboy, scheme: :http, plug: Frame.Router, options: [port: 4001]},
+      {Frame.Repo, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

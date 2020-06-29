@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Create order</h1>
+
+    <div>
+      <form action="/orders" method="post">
+        <label>Order: </label>
+        <textarea name="order"></textarea>
+
+        <label>Author: </label>
+        <textarea name="author"></textarea>
+
+        <button type="submit">Create</button>
+    </div>
+  </body>
+</html>

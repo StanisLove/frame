@@ -5,6 +5,8 @@ defmodule Frame.Actions.Orders.Index do
   def init(opts), do: opts
 
   def call(conn, _opts) do
-    send_resp(conn, 200, Orders.index(period: "for today"))
+    orders = Frame.Repo.all()
+
+    send_resp(conn, 200, Orders.index(period: "for today", orders: orders))
   end
 end
