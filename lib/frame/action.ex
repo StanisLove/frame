@@ -13,7 +13,7 @@ defmodule Frame.Action do
 
     def render(conn, body) do
       conn
-      |> put_resp_conent_type("text/html")
+      |> put_resp_content_type("text/html")
       |> send_resp(200, body)
     end
 

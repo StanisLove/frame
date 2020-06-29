@@ -1,8 +1,5 @@
 defmodule Frame.Actions.Orders.Create do
   use Frame.Action
-  import Plug.Conn
-
-  def init(opts), do: opts
 
   def call(conn, _opts) do
     %{"order" => order, "author" => author} = conn.params

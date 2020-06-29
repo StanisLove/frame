@@ -1,16 +1,6 @@
 defmodule Frame.Views.Orders do
-  require EEx
+  use Frame.View
 
-  EEx.function_from_file(
-    :def,
-    :index,
-    "lib/frame/templates/posts/index.html.eex",
-    [:assigns]
-  )
-
-  EEx.function_from_file(
-    :def,
-    :new,
-    "lib/frame/templates/posts/new.html.eex"
-  )
+  deftemplate("orders/index.html.eex", :index)
+  deftemplate("orders/new.html.eex", :new, false)
 end
