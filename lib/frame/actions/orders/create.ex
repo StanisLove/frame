@@ -1,4 +1,5 @@
 defmodule Frame.Actions.Orders.Create do
+  use Frame.Action
   import Plug.Conn
 
   def init(opts), do: opts
@@ -8,12 +9,7 @@ defmodule Frame.Actions.Orders.Create do
 
     Frame.Repo.insert(order, %{body: order, author: author})
 
-    url = "/orders"
-
-    conn
-    |> put_resp_header("location", url)
-    |> put_resp_content_type("text/html")
-    |> send_resp(302, "You are being redirected to #{url}")
+    redirect(conn, to: "/orders")
   end
 end
 
