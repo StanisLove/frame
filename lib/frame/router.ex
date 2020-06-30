@@ -5,12 +5,12 @@ defmodule Frame.Router do
     use Plug.Debugger, style: [primary: "#c0392b", accent: "#41B577"]
   end
 
-  plug Plug.Static, from: :frame, at: "/"
   plug Plug.Logger
+  plug Plug.Static, from: :frame, at: "/", only: [:images, :css]
   plug :match
   plug Plug.Parsers, parsers: [:urlencoded, :multipart]
-  plug Plug.Session, store: :cookie, key: "_frame_app", signing_salt: "frame salt"
   plug :put_secret_key_base
+  plug Plug.Session, store: :cookie, key: "_frame_app", signing_salt: "frame salt"
   plug :fetch_session
   plug :dispatch
 
