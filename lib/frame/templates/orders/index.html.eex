@@ -3,7 +3,12 @@
   <head>
   </head>
   <body>
-    <h1>It's the orders <%= @period %>.</h1>
+    <%= if @user_email do %>
+      <h1>Welcome, <%= @user_email %></h1>
+    <% else %>
+      <a href="/login">Sign in</a>
+    <% end %>
+    <h2>It's the orders <%= @period %>.</h2>
     <%= if length(@orders) > 0 do %>
       <ul>
         <%= for order <- @orders do %>
